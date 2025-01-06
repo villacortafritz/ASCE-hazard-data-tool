@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Affordable Wire Management - Hazard Tool</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="awm-header">
+    <img src="logo.png" alt="AWM Logo" class="awm-logo" />
+    <div class="header-text">
+      <h1>Affordable Wire Management</h1>
+      <h2>Hazard Data Tool</h2>
+    </div>
+  </header>
+
+  <main class="tool-container">
+    <section class="upload-section">
+      <label for="csvFile">Upload CSV:</label>
+      <input type="file" id="csvFile" accept=".csv" />
+      <button id="processButton" disabled>Process</button>
+      <button id="downloadButton" disabled>Download CSV</button>
+    </section>
+
+    <section id="errorMessages" class="error-messages"></section>
+
+    <section class="output-section">
+      <table id="outputTable">
+        <thead>
+          <tr></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="awm-footer">
+    <p>Developed by Fritz for Affordable Wire Management &copy; 2025</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
