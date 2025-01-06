@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ASCE Hazard Data Tool</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>ASCE Hazard Data Tool</h1>
+    <p>Upload a CSV file containing latitude and longitude data to process hazard information.</p>
 
+    <!-- File Upload Section -->
+    <input type="file" id="csvFile" accept=".csv" />
+    <button id="processButton" disabled>Process Data</button>
+
+    <!-- Error Messages Section -->
+    <div id="errorMessages"></div>
+
+    <!-- Output Table Section -->
+    <div id="outputTableContainer">
+      <table id="outputTable">
+        <thead>
+          <tr>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Hazard Data</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- Download Button -->
+    <button id="downloadButton" disabled>Download CSV</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
