@@ -1,4 +1,4 @@
-// validation.js - Input Validation for Hazard Tool
+// validation.js - Enhanced Input Validation for Hazard Tool
 
 // Validation Rules
 const validStandards = ['7-10', '7-16', '7-22', '41-17'];
@@ -14,15 +14,25 @@ const validSiteClasses = {
 function validateRow(row, index) {
   const errors = [];
 
+  // Column Count Validation
+  if (!row.latitude || !row.longitude || !row.standards || !row.risk || !row.siteClass) {
+    errors.push(`Row ${index + 1}: Missing required columns. Ensure all 5 columns are filled (Latitude, Longitude, Standards, Risk, Site Class).`);
+    return errors; // Skip further validation if columns are missing
+  }
+
   // Latitude Validation (-90 to 90)
   const latitude = parseFloat(row.latitude);
-  if (isNaN(latitude) || latitude < -90 || latitude > 90) {
+  if (isNaN(latitude)) {
+    errors.push(`Row ${index + 1}: Latitude is missing or not a number.`);
+  } else if (latitude < -90 || latitude > 90) {
     errors.push(`Row ${index + 1}: Invalid latitude (${row.latitude}). Must be between -90 and 90.`);
   }
 
   // Longitude Validation (-180 to 180)
   const longitude = parseFloat(row.longitude);
-  if (isNaN(longitude) || longitude < -180 || longitude > 180) {
+  if (isNaN(longitude)) {
+    errors.push(`Row ${index + 1}: Longitude is missing or not a number.`);
+  } else if (longitude < -180 || longitude > 180) {
     errors.push(`Row ${index + 1}: Invalid longitude (${row.longitude}). Must be between -180 and 180.`);
   }
 
@@ -62,14 +72,25 @@ function validateData(data) {
 // Export Validation Function
 function validateInputData(inputData) {
   const errors = validateData(inputData);
+
+  // Disable process button if errors exist
+  const processButton = document.getElementById('processButton');
+  processButton.disabled = errors.length > 0;
+
+  // Hide output table if errors exist
+  const outputTable = document.getElementById('outputTable');
+  outputTable.style.display = errors.length > 0 ? 'none' : 'table';
+
+  // Display errors in error message section
+  const errorMessages = document.getElementById('errorMessages');
+  errorMessages.innerHTML = '';
+  if (errors.length > 0) {
+    errors.forEach(error => {
+      const errorElement = document.createElement('p');
+      errorElement.textContent = error;
+      errorMessages.appendChild(errorElement);
+    });
+  }
+
   return errors;
 }
-
-// Example Usage for Testing
-const exampleInput = [
-  { latitude: '34.0522', longitude: '-118.2437', standards: '7-22', risk: '2', siteClass: 'D' },
-  { latitude: '200', longitude: '-118.2437', standards: '7-22', risk: '2', siteClass: 'D' },
-  { latitude: '34.0522', longitude: '-118.2437', standards: '7-10', risk: '5', siteClass: 'Z' }
-];
-
-console.log(validateInputData(exampleInput));

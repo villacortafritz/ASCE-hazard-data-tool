@@ -41,8 +41,10 @@ function parseCSV(data) {
   inputData = [];
   errorMessages.innerHTML = '';
 
-  // Parse each row
   rows.forEach((row, index) => {
+    // Skip the header row
+    if (index === 0) return;
+  
     const columns = row.split(',');
     if (columns.length === 5) { // Ensure 5 columns exist
       inputData.push({
@@ -56,8 +58,17 @@ function parseCSV(data) {
       showError(`Row ${index + 1}: Incorrect number of columns.`);
     }
   });
+  
+  // Run Validation
+  const errors = validateInputData(inputData);
+  if (errors.length > 0) {
+    console.log('Validation failed. Errors found:', errors);
+    processButton.disabled = true; // Disable process button
+    outputTable.style.display = 'none'; // Hide output table
+    return; // Stop processing if errors exist
+  }
 
-  // Process mock API call after parsing
+  // If validation passes, proceed with mock API
   processMockAPI();
 }
 
