@@ -1,7 +1,7 @@
 // main.js - Core Logic for Hazard Tool
 
 // Download Template Function
-function downloadTemplate() {
+document.getElementById('downloadTemplateButton').addEventListener('click', function () {
   const csvContent = `Latitude,Longitude,Standards Version,Risk Level,Site Class
 34.0522,-118.2437,7-22,2,D
 40.7128,-74.0060,7-16,3,B-estimated
@@ -15,7 +15,8 @@ function downloadTemplate() {
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
-}
+});
+
 
 
 
