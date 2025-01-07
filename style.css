@@ -5,6 +5,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   background-color: #f9f9f9; /* Subtle background */
+  text-align: center;
 }
 
 /* Header Styles */
@@ -50,14 +51,74 @@ body {
   max-width: 90%;
 }
 
-.upload-section {
+/* Instructions Section */
+.instructions {
   text-align: center;
   margin-bottom: 20px;
 }
 
+.instructions h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.instructions p {
+  margin: 5px 0;
+}
+
+.instructions button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #7AC5CD; /* Pantone 2299 C */
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.instructions button:hover {
+  background-color: #69b0ba;
+}
+
+.instructions-note {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
+
+.instructions-note p {
+  margin: 5px 0;
+}
+
+.instructions-note strong {
+  color: #355E3B; /* Highlight important tips */
+}
+
+/* Upload Section */
+.upload-section {
+  padding: 20px;
+  margin: 20px auto;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  max-width: 600px;
+}
+
+.upload-section h3 {
+  margin-bottom: 15px;
+}
+
+.upload-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
 button {
   padding: 10px 15px;
-  margin-left: 10px;
   background-color: #7AC5CD; /* Pantone 2299 C */
   color: white;
   border: none;
@@ -104,4 +165,19 @@ button:disabled {
   background-color: #355E3B; /* Pantone 555 C */
   color: white;
   font-size: 14px;
+}
+
+/* Instructions Note */
+.instructions-note {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+.instructions-note p {
+  margin: 5px 0;
+}
+
+.instructions-note strong {
+  color: #355E3B; /* Highlight important tips */
 }

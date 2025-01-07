@@ -16,19 +16,58 @@
   </header>
 
   <main class="tool-container">
-    <section class="upload-section">
-      <label for="csvFile">Upload CSV:</label>
-      <input type="file" id="csvFile" accept=".csv" />
-      <button id="processButton" disabled>Process</button>
-      <button id="downloadButton" disabled>Download CSV</button>
+    <!-- Instructions Section -->
+    <section class="instructions">
+      <h3>Instructions</h3>
+      <p>1. Download the CSV template using the button below.</p>
+      <p>2. Fill in all required fields (Latitude, Longitude, Standards Version, Risk Level, Site Class).</p>
+      <p>3. Upload the completed CSV file and click 'Process'.</p>
+      <p>4. Review results and download the output with hazard data.</p>
+      <p>5. Errors, if any, will be shown below with details for correction.</p>
+      <button id="downloadTemplateButton">Download Template</button>
+
+      <!-- Instructional Note -->
+      <div class="instructions-note">
+        <p><strong>Important:</strong> When opening the template in Excel, ensure that columns for "Standards Version" and other values are treated as <strong>text</strong> to avoid automatic formatting (e.g., dates).</p>
+        <p>To do this, import the CSV into Excel and set the data type for these columns as <strong>Text</strong> during import.</p>
+        <p>Alternatively, use a plain text editor (e.g., Notepad) to edit the template without formatting issues.</p>
+      </div>
     </section>
 
+    <!-- Upload Section -->
+    <section class="upload-section">
+      <h3>Upload CSV File</h3>
+      <label for="csvFile">Choose CSV File:</label>
+      <input type="file" id="csvFile" accept=".csv" />
+      <div class="upload-controls">
+        <button id="processButton" disabled>Process</button>
+        <button id="downloadButton" disabled>Download CSV</button>
+      </div>
+    </section>
+
+    <!-- Error Messages Section -->
     <section id="errorMessages" class="error-messages"></section>
 
+    <!-- Output Table Section -->
     <section class="output-section">
-      <table id="outputTable">
+      <table id="outputTable" style="display: none;">
         <thead>
-          <tr></tr>
+          <tr>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Standards</th>
+            <th>Risk Level</th>
+            <th>Site Class</th>
+            <th>Seismic</th>
+            <th>Wind</th>
+            <th>Snow</th>
+            <th>Ice</th>
+            <th>Rain</th>
+            <th>Flood</th>
+            <th>Tsunami</th>
+            <th>Tornado</th>
+            <th>Response Code</th>
+          </tr>
         </thead>
         <tbody></tbody>
       </table>
@@ -39,6 +78,7 @@
     <p>Developed by Fritz for Affordable Wire Management &copy; 2025</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="validation.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
