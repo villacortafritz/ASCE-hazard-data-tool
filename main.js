@@ -2,12 +2,22 @@
 
 // Download Template Function
 function downloadTemplate() {
-  const url = 'AWM-Hazard-Tool-Template.csv'; // Relative path to the file
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = 'AWM-Hazard-Tool-Template.csv'; // Force download
-  link.click();
+  const url = 'https://raw.githubusercontent.com/villacortafritz/ASCE-hazard-data-tool/main/AWM-Hazard-Tool-Template.csv';
+
+  fetch(url)
+    .then(response => response.blob())
+    .then(blob => {
+      const link = document.createElement('a');
+      link.href = window.URL.createObjectURL(blob);
+      link.download = 'AWM-Hazard-Tool-Template.csv'; // Force the download
+      link.click();
+    })
+    .catch(error => {
+      console.error('Error downloading the template:', error);
+      alert('Failed to download the template. Please try again later.');
+    });
 }
+
 
 // Global Variables
 let inputData = [];
