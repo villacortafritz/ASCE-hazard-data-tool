@@ -1,33 +1,5 @@
 // main.js - Core Logic for Hazard Tool
 
-// Download Template Function
-// Download Template Button Logic
-document.addEventListener('DOMContentLoaded', () => {
-  // Download Template Button Logic
-  document.getElementById('downloadTemplateButton').addEventListener('click', function () {
-    const csvContent = [
-      ['Latitude', 'Longitude', 'Standards Version', 'Risk Level', 'Site Class'],
-      ['34.0522', '-118.2437', '7-22', '2', 'D'],
-      ['40.7128', '-74.0060', '7-16', '3', 'B-estimated'],
-      ['37.7749', '-122.4194', '41-17', '1', 'F'],
-      ['29.7604', '-95.3698', '7-10', '4', 'A']
-    ];
-
-    let csvString = csvContent.map(e => e.join(",")).join("\\n");
-
-    const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
-    const link = document.createElement('a');
-    const url = URL.createObjectURL(blob);
-
-    link.setAttribute('href', url);
-    link.setAttribute('download', 'AWM-Hazard-Tool-Template.csv');
-    document.body.appendChild(link); // Required for Firefox
-    link.click();
-    document.body.removeChild(link);
-  });
-});
-
-
 // Global Variables
 let inputData = [];
 let processedData = [];
