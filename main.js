@@ -2,21 +2,21 @@
 
 // Download Template Function
 function downloadTemplate() {
-  const url = 'https://raw.githubusercontent.com/villacortafritz/ASCE-hazard-data-tool/main/AWM-Hazard-Tool-Template.csv';
+  const csvContent = `Latitude,Longitude,Standards Version,Risk Level,Site Class
+34.0522,-118.2437,7-22,2,D
+40.7128,-74.0060,7-16,3,B-estimated
+37.7749,-122.4194,41-17,1,F
+29.7604,-95.3698,7-10,4,A`;
 
-  fetch(url)
-    .then(response => response.blob())
-    .then(blob => {
-      const link = document.createElement('a');
-      link.href = window.URL.createObjectURL(blob);
-      link.download = 'AWM-Hazard-Tool-Template.csv'; // Force the download
-      link.click();
-    })
-    .catch(error => {
-      console.error('Error downloading the template:', error);
-      alert('Failed to download the template. Please try again later.');
-    });
+  const blob = new Blob([csvContent], { type: 'text/csv' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = 'AWM-Hazard-Tool-Template.csv';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
+
 
 
 // Global Variables
