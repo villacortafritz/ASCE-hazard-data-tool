@@ -4,90 +4,77 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
-
-  <title>Affordable Wire Management - Hazard Tool</title>
+  <title>AWM Hazard Data Tool</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="awm-header">
-    <img src="logo.png" alt="AWM Logo" class="awm-logo" />
-    <div class="header-text">
-      <h1>Affordable Wire Management</h1>
-      <h2>Hazard Data Tool</h2>
+    <!-- Logo and Title aligned side-by-side in the center -->
+    <div class="header-content">
+      <img src="logo.png" alt="AWM Logo" class="awm-logo-small" />
+      <div class="header-text">
+        <h1>Affordable Wire Management</h1>
+        <h2>Hazard Data Tool</h2>
+      </div>
     </div>
+    <!-- API Counter vertically centered -->
+    <div id="apiUsage" class="api-usage-counter">API Requests (Jan): 0</div>
   </header>
 
   <main class="tool-container">
-    <!-- Instructions Section -->
-    <section class="instructions">
-      <h3>Instructions</h3>
-      <p>1. Download the CSV template using the button below.</p>
-      <p>2. Fill in all required fields (Latitude, Longitude, Standards Version, Risk Level, Site Class).</p>
-      <p>3. Upload the completed CSV file and click 'Process'.</p>
-      <p>4. Review results and download the output with hazard data.</p>
-      <p>5. Errors, if any, will be shown below with details for correction.</p>
-      <button id="downloadTemplateButton">Download Template</button>
+    <!-- Flex container for side-by-side layout -->
+    <div class="flex-container">
+      <!-- Instructions Section -->
+      <section class="instructions card">
+        <h3>Instructions</h3>
+        <ul class="instructions-list">
+          <li>Download the CSV template below and fill in the required fields.</li>
+          <li>Ensure the following data rules:</li>
+          <ul>
+            <li>Latitude: -90 to 90</li>
+            <li>Longitude: -180 to 180</li>
+            <li>Standards: 7-10, 7-16, 7-22, 41-17</li>
+            <li>Risk Level: 1, 2, 3, 4</li>
+            <li>Site Class depends on Standards:</li>
+            <ul>
+              <li>7-10, 41-17: A, B, C, D, E, F</li>
+              <li>7-16: A, B, C, D, E, F, B-estimated, D-default, BC, DE</li>
+              <li>7-22: A, B, C, D, E, B-estimated, D-default, BC, CD, DE, Default</li>
+            </ul>
+          </ul>
+          <li>Upload the completed CSV and click 'Process'.</li>
+          <li>Review results and download output.</li>
+        </ul>
+        <button id="downloadTemplateButton">Download Template</button>
+      </section>
 
-        <script>
-          // Debugging - Log if the script is running
-          console.log('Script loaded successfully');
+      <!-- Upload Section -->
+      <section class="upload-section card">
+        <h3>Upload CSV File</h3>
+        <label for="csvFile">Choose CSV File:</label>
+        <input type="file" id="csvFile" accept=".csv" />
+        <div class="upload-controls">
+          <button id="processButton" disabled>Process</button>
+          <button id="downloadButton" disabled>Download CSV</button>
+        </div>
+        <!-- Excel Formatting Tips -->
+        <div class="excel-tips">
+          <h4>Excel Formatting Tips:</h4>
+          <ul>
+            <li>Ensure all fields, especially standards, are formatted as <strong>text</strong>.</li>
+            <li>Do not let Excel auto-format numeric fields as dates.</li>
+            <li>Double-check CSV formatting before uploading.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
 
-          // Add event listener to the button
-          document.getElementById('downloadTemplateButton').addEventListener('click', function () {
-            console.log('Button clicked!'); // Debugging
+    <!-- Error Messages Section - Initially Hidden -->
+    <section id="errorMessages" class="error-messages" style="display: none;"></section>
 
-            // CSV content
-            const csvContent = [
-              ['Latitude', 'Longitude', 'Standards Version', 'Risk Level', 'Site Class'],
-              ['34.0522', '-118.2437', '7-22', '2', 'D'],
-              ['40.7128', '-74.0060', '7-16', '3', 'B-estimated'],
-              ['37.7749', '-122.4194', '41-17', '1', 'F'],
-              ['29.7604', '-95.3698', '7-10', '4', 'A']
-            ];
-
-            // Create CSV string
-            let csvString = csvContent.map(e => e.join(",")).join("\n");
-
-            // Create Blob and trigger download
-            const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
-            const link = document.createElement('a');
-            const url = URL.createObjectURL(blob);
-
-            link.setAttribute('href', url);
-            link.setAttribute('download', 'AWM-Hazard-Tool-Template.csv');
-            document.body.appendChild(link); // Required for Firefox
-            link.click();
-            document.body.removeChild(link);
-
-            console.log('Download should start now'); // Debugging
-          });
-        </script>
-
-      <!-- Instructional Note -->
-      <div class="instructions-note">
-        <p><strong>Important:</strong> When opening the template in Excel, ensure that columns for "Standards Version" and other values are treated as <strong>text</strong> to avoid automatic formatting (e.g., dates).</p>
-        <p>To do this, import the CSV into Excel and set the data type for these columns as <strong>Text</strong> during import.</p>
-        <p>Alternatively, use a plain text editor (e.g., Notepad) to edit the template without formatting issues.</p>
-      </div>
-    </section>
-
-    <!-- Upload Section -->
-    <section class="upload-section">
-      <h3>Upload CSV File</h3>
-      <label for="csvFile">Choose CSV File:</label>
-      <input type="file" id="csvFile" accept=".csv" />
-      <div class="upload-controls">
-        <button id="processButton" disabled>Process</button>
-        <button id="downloadButton" disabled>Download CSV</button>
-      </div>
-    </section>
-
-    <!-- Error Messages Section -->
-    <section id="errorMessages" class="error-messages"></section>
-
-    <!-- Output Table Section -->
-    <section class="output-section">
-      <table id="outputTable" style="display: none;">
+    <!-- Output Table Section - Full Width in Card -->
+    <section class="output-section" id="outputSection" style="display: none;">
+      <table id="outputTable">
         <thead>
           <tr>
             <th>Latitude</th>

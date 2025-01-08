@@ -1,0 +1,40 @@
+Row 1: Correct data. All parameters valid.
+Row 2: Correct data. All parameters valid.
+Row 3: Correct data. All parameters valid.
+Row 4: Invalid latitude (200). Must be between -90 and 90.
+Row 5: Invalid latitude (-91). Must be between -90 and 90.
+Row 6: Invalid longitude (200). Must be between -180 and 180.
+Row 7: Invalid longitude (-181). Must be between -180 and 180.
+Row 8: Invalid standards version (7-25). Allowed values: 7-10, 7-16, 7-22, 41-17.
+Row 8: Invalid site class (D) for standards version 7-25. Allowed values: None.
+Row 9: Invalid risk level (5). Allowed values: 1, 2, 3, 4.
+Row 10: Invalid risk level (0). Allowed values: 1, 2, 3, 4.
+Row 11: Invalid site class (Z) for standards version 7-22. Allowed values: A, B, C, D, E, B-estimated, D-default, BC, CD, DE, Default.
+Row 12: Invalid site class (B-estimated) for standards version 41-17. Allowed values: A, B, C, D, E, F.
+Row 13: Latitude is missing or not a number.
+Row 13: Missing required columns. Ensure all 5 columns are filled (Latitude, Longitude, Standards, Risk, Site Class).
+Row 14: Longitude is missing or not a number.
+Row 14: Missing required columns. Ensure all 5 columns are filled (Latitude, Longitude, Standards, Risk, Site Class).
+Row 15: Invalid standards version (). Allowed values: 7-10, 7-16, 7-22, 41-17.
+Row 15: Invalid site class (A) for standards version . Allowed values: None.
+Row 15: Missing required columns. Ensure all 5 columns are filled (Latitude, Longitude, Standards, Risk, Site Class).
+Row 16: Invalid risk level (). Allowed values: 1, 2, 3, 4.
+Row 16: Missing required columns. Ensure all 5 columns are filled (Latitude, Longitude, Standards, Risk, Site Class).
+Row 17: Invalid site class () for standards version 7-10. Allowed values: A, B, C, D, E, F.
+Row 17: Missing required columns. Ensure all 5 columns are filled (Latitude, Longitude, Standards, Risk, Site Class).
+Row 18: Latitude is missing or not a number.
+Row 19: Longitude is missing or not a number.
+Row 20: Invalid latitude (90.1). Must be between -90 and 90.
+Row 21: Invalid latitude (-90.1). Must be between -90 and 90.
+Row 22: Invalid longitude (180.1). Must be between -180 and 180.
+Row 23: Invalid longitude (-180.1). Must be between -180 and 180.
+Row 24: Invalid site class (DE) for standards version 7-10. Allowed values: A, B, C, D, E, F.
+Row 25: Invalid latitude (-200). Must be between -90 and 90.
+Row 25: Invalid longitude (200). Must be between -180 and 180.
+Row 25: Invalid risk level (5). Allowed values: 1, 2, 3, 4.
+Row 25: Invalid site class (Z) for standards version 41-17. Allowed values: A, B, C, D, E, F.
+Row 26: Correct data. All parameters valid.
+Row 27: Correct data. All parameters valid.
+Row 28: Latitude is missing or not a number.
+Row 29: Longitude is missing or not a number.
+Row 30: Invalid site class (CD) for standards version 7-10. Allowed values: A, B, C, D, E, F.
