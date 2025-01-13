@@ -15,6 +15,26 @@ const errorMessages = document.getElementById('errorMessages');
 const outputTable = document.getElementById('outputTable');
 const outputSection = document.getElementById('outputSection');
 const apiUsageDisplay = document.getElementById('apiUsage');
+const downloadTemplateButton = document.getElementById('downloadTemplateButton');
+
+downloadTemplateButton.addEventListener('click', () => {
+  // Define the CSV template content
+  let templateContent = 'data:text/csv;charset=utf-8,';
+  templateContent += 'Latitude,Longitude,Standards,Risk,SiteClass\n'; // CSV headers
+  templateContent += '40.7128,-74.0060,7-22,1,B\n'; // Example row (optional)
+
+  // Encode the CSV content
+  const encodedUri = encodeURI(templateContent);
+
+  // Create a temporary anchor element for the download
+  const link = document.createElement('a');
+  link.setAttribute('href', encodedUri);
+  link.setAttribute('download', 'AWM-Hazard-Template.csv'); // File name
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+});
+
 
 // Enable Process Button When File is Uploaded alsoooo check if the file is CCSVVV
 csvFileInput.addEventListener('change', () => {
