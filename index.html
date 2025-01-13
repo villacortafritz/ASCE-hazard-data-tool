@@ -6,8 +6,11 @@
   <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
   <title>AWM Hazard Data Tool</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo.png" type="image/png" />
 </head>
 <body>
+  <!-- Loading Spinner -->
+  <div id="loadingSpinner" class="loading-spinner">Processing...</div>
   <header class="awm-header">
     <!-- Logo and Title aligned side-by-side in the center -->
     <div class="header-content">
@@ -29,17 +32,17 @@
         <h3>Instructions</h3>
         <ul class="instructions-list">
           <li>Download the CSV template below and fill in the required fields.</li>
-          <li>Ensure the following data rules:</li>
+          <li>Ensure the following data rules as per <b><a href="https://amplify.asce.org/api">ASCE Documentations Page:</a></b></li>
           <ul>
-            <li>Latitude: -90 to 90</li>
-            <li>Longitude: -180 to 180</li>
-            <li>Standards: 7-10, 7-16, 7-22, 41-17</li>
-            <li>Risk Level: 1, 2, 3, 4</li>
+            <li><b>Latitude: </b>-90 to 90</li>
+            <li><b>Longitude:</b> -180 to 180</li>
+            <li><b>Standards:</b> 7-10, 7-16, 7-22, 41-17</li>
+            <li><b>Risk Level:</b> 1, 2, 3, 4</li>
             <li>Site Class depends on Standards:</li>
             <ul>
-              <li>7-10, 41-17: A, B, C, D, E, F</li>
-              <li>7-16: A, B, C, D, E, F, B-estimated, D-default, BC, DE</li>
-              <li>7-22: A, B, C, D, E, B-estimated, D-default, BC, CD, DE, Default</li>
+              <li><b>7-10, 41-17:</b> A, B, C, D, E, F</li>
+              <li><b>7-16:</b> A, B, C, D, E, F, B-estimated, D-default, BC, DE</li>
+              <li><b>7-22:</b> A, B, C, D, E, B-estimated, D-default, BC, CD, DE, Default</li>
             </ul>
           </ul>
           <li>Upload the completed CSV and click 'Process'.</li>
@@ -52,7 +55,7 @@
       <section class="upload-section card">
         <h3>Upload CSV File</h3>
         <label for="csvFile">Choose CSV File:</label>
-        <input type="file" id="csvFile" accept=".csv" />
+        <input type="file" id="csvFile" accept=".csv" aria-label="Upload CSV File"/>
         <div class="upload-controls">
           <button id="processButton" disabled>Process</button>
           <button id="downloadButton" disabled>Download CSV</button>

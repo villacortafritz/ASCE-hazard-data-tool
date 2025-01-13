@@ -1,4 +1,4 @@
-// validation.js - Enhanced Input Validation for Hazard Tool
+// validation.js - Error handling for input parameters in CSV to not waste API calls for errors on inputs
 
 // Validation Rules
 const validStandards = ['7-10', '7-16', '7-22', '41-17'];
@@ -51,6 +51,8 @@ function validateRow(row, index) {
   if (!siteClasses || !siteClasses.includes(row.siteClass)) {
     errors.push(`Row ${index + 1}: Invalid site class (${row.siteClass}) for standards version ${row.standards}. Allowed values: ${siteClasses ? siteClasses.join(', ') : 'None'}.`);
   }
+
+  console.log(`Row ${index + 1}:`, row, 'Errors:', errors); //check if validaterow really works
 
   return errors;
 }

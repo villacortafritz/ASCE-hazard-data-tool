@@ -207,3 +207,46 @@ button:disabled {
   color: white;
   font-size: 14px;
 }
+
+/*loading spinners*/
+
+/* Loading Spinner */
+.loading-spinner {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed position to overlay the entire page */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Align the spinner to the center */
+  font-size: 18px; /* Font size for the spinner text */
+  font-weight: bold;
+  color: #00796b; /* Matches your color theme */
+  background: rgba(255, 255, 255, 0.8); /* Optional semi-transparent background */
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+  z-index: 1000; /* Ensure it appears above all other elements */
+}
+
+.loading-spinner.active {
+  display: block; /* Display when active */
+}
+
+.output-section table {
+  border: 1px solid #ddd;
+}
+
+.loading-spinner {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#errorMessages {
+  display: none;
+}
+
+
