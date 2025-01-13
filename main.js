@@ -38,7 +38,7 @@ processButton.addEventListener('click', async () => {
   // Clear previous error messages
   errorMessages.innerHTML = '';
   errorMessages.style.display = 'none';
-  
+
   const file = csvFileInput.files[0];
   const reader = new FileReader();
 
@@ -245,14 +245,19 @@ downloadButton.addEventListener('click', () => {
     csvContent += `${row.latitude},${row.longitude},${row.standards},${row.risk},${row.siteClass},${row.seismic},${row.wind},${row.snow},${row.ice},${row.rain},${row.flood},${row.tsunami},${row.tornado},${row.responseCode}\n`;
   });
 
+  // Generate current date-time for the file name
+  const now = new Date();
+  const timestamp = now.toISOString().replace(/:/g, '-').split('.')[0]; // Format: YYYY-MM-DDTHH-MM-SS
+
   const encodedUri = encodeURI(csvContent);
   const link = document.createElement('a');
   link.setAttribute('href', encodedUri);
-  link.setAttribute('download', 'AWM-Hazard-Results.csv');
+  link.setAttribute('download', `AWM-Hazard-Results-${timestamp}.csv`); // Append timestamp to the file name
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
 });
+
 
 function toggleLoading(isLoading) {
   const spinner = document.getElementById('loadingSpinner');
