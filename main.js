@@ -39,7 +39,8 @@ downloadTemplateButton.addEventListener('click', () => {
 // Enable Process Button When File is Uploaded alsoooo check if the file is CCSVVV
 csvFileInput.addEventListener('change', () => {
   const file = csvFileInput.files[0];
-  if (file && file.name.endsWith('.csv')) {
+  // Accept files with a .csv extension regardless of case
+  if (file && file.name.toLowerCase().endsWith('.csv')) {
     processButton.disabled = false;
     downloadButton.disabled = true;
 
