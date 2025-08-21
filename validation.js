@@ -16,7 +16,7 @@ function validateRow(row, index) {
 
   // Column Count Validation
   if (!row.latitude || !row.longitude || !row.standards || !row.risk || !row.siteClass) {
-    errors.push(`Row ${index + 1}: Missing required columns. Ensure all 5 columns are filled (Latitude, Longitude, Standards, Risk, Site Class).`);
+    errors.push(`Row ${index + 1}: Missing required columns. Ensure all 5 columns are filled (Latitude, Longitude, Standards Version, Risk Level, Site Class).`);
     return errors; // Skip further validation if columns are missing
   }
 
@@ -71,28 +71,7 @@ function validateData(data) {
   return errors;
 }
 
-// Export Validation Function
+// Export Validation Function (pure; returns a list of error strings)
 function validateInputData(inputData) {
-  const errors = validateData(inputData);
-
-  // Disable process button if errors exist
-  const processButton = document.getElementById('processButton');
-  processButton.disabled = errors.length > 0;
-
-  // Hide output table if errors exist
-  const outputTable = document.getElementById('outputTable');
-  outputTable.style.display = errors.length > 0 ? 'none' : 'table';
-
-  // Display errors in error message section
-  const errorMessages = document.getElementById('errorMessages');
-  errorMessages.innerHTML = '';
-  if (errors.length > 0) {
-    errors.forEach(error => {
-      const errorElement = document.createElement('p');
-      errorElement.textContent = error;
-      errorMessages.appendChild(errorElement);
-    });
-  }
-
-  return errors;
+  return validateData(inputData);
 }

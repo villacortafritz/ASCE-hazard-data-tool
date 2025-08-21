@@ -20,8 +20,8 @@
         <h2>Hazard Data Tool</h2>
       </div>
     </div>
-    <!-- API Counter vertically centered -->
-    <div id="apiUsage" class="api-usage-counter">API Requests (Jan): 0</div>
+    <!-- Requests counter -->
+    <div id="apiUsage" class="api-usage-counter">Requests: 0</div>
   </header>
 
   <main class="tool-container">
@@ -32,14 +32,14 @@
         <h3>Instructions</h3>
         <ul class="instructions-list">
           <li>Download the CSV template below and fill in the required fields.</li>
-          <li>Ensure the following data rules as per <a href="https://amplify.asce.org/api" target="_blank" rel="noopener noreferrer"><b>ASCE Documentations Page:</b></a></li>
+          <li>Ensure the following data rules as per <a href="https://amplify.asce.org/api" target="_blank" rel="noopener noreferrer"><b>ASCE Documentation:</b></a></li>
           <ul>
 
             <li><b>Latitude: </b>-90 to 90</li>
             <li><b>Longitude:</b> -180 to 180</li>
-            <li><b>Standards:</b> 7-10, 7-16, 7-22, 41-17</li>
+            <li><b>Standards Version:</b> 7-10, 7-16, 7-22, 41-17</li>
             <li><b>Risk Level:</b> 1, 2, 3, 4</li>
-            <li>Site Class depends on Standards:</li>
+            <li>Site Class depends on Standards Version:</li>
             <ul>
               <li><b>7-10, 41-17:</b> A, B, C, D, E, F</li>
               <li><b>7-16:</b> A, B, C, D, E, F, B-estimated, D-default, BC, DE</li>
@@ -47,7 +47,7 @@
             </ul>
           </ul>
           <li>Upload the completed CSV and click 'Process'.</li>
-          <li>Review results and download output.</li>
+          <li>Review results and download the output CSV.</li>
         </ul>
         <button id="downloadTemplateButton">Download Template</button>
       </section>
@@ -83,7 +83,7 @@
           <tr>
             <th>Latitude</th>
             <th>Longitude</th>
-            <th>Standards</th>
+            <th>Standards Version</th>
             <th>Risk Level</th>
             <th>Site Class</th>
             <th>Seismic</th>
