@@ -163,8 +163,9 @@ async function fetchAllHazardData(latitude, longitude, standards, riskLevel, sit
   const endpoint = `https://vt8pmhgbpp.us-east-1.awsapprunner.com/api/hazards`;
 
   try {
-    // Include siteClass for APIs that need it; keep param names used by the backend
-    const url = `${endpoint}?latitude=${encodeURIComponent(latitude)}&longitude=${encodeURIComponent(longitude)}&standards=${encodeURIComponent(standards)}&risk=${encodeURIComponent(riskLevel)}&siteClass=${encodeURIComponent(siteClass)}`;
+    // Use ASCE-style parameter names to maximize compatibility
+    // lat, lon, standardsVersion, riskLevel, siteClass
+    const url = `${endpoint}?lat=${encodeURIComponent(latitude)}&lon=${encodeURIComponent(longitude)}&standardsVersion=${encodeURIComponent(standards)}&riskLevel=${encodeURIComponent(riskLevel)}&siteClass=${encodeURIComponent(siteClass)}`;
     const response = await fetch(url, {
       headers: {
         'Authorization': `Bearer ${apiKey}`

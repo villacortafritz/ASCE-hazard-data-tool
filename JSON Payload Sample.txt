@@ -1,0 +1,747 @@
+1. Flood
+
+
+GET
+/flood
+Get flood information
+
+
+Parameters
+Cancel
+Name	Description
+lat *
+number
+(query)
+Latitude of the location
+
+34.921206
+lon *
+number
+(query)
+Longitude of the location
+
+-118.418998
+Execute
+Clear
+Responses
+Curl
+
+curl -X 'GET' \
+  'https://api-hazard.asce.org/v1/flood?lat=34.921206&lon=-118.418998' \
+  -H 'accept: */*'
+Request URL
+https://api-hazard.asce.org/v1/flood?lat=34.921206&lon=-118.418998
+Server response
+Code	Details
+500
+Undocumented
+Error: Internal Server Error
+
+Response body
+Download
+{
+  "code": 500,
+  "message": "Token required"
+}
+Response headers
+ access-control-allow-origin: * 
+ content-length: 39 
+ content-security-policy: default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests 
+ content-type: application/json; charset=utf-8 
+ cross-origin-opener-policy: same-origin 
+ cross-origin-resource-policy: same-origin 
+ date: Thu,21 Aug 2025 21:56:24 GMT 
+ etag: W/"27-mfKgJc2yDxTkGKgOVwnI4IMJ9G8" 
+ origin-agent-cluster: ?1 
+ ratelimit-limit: 3000 
+ ratelimit-policy: 3000;w=60 
+ ratelimit-remaining: 2997 
+ ratelimit-reset: 49 
+ referrer-policy: no-referrer 
+ server: envoy 
+ strict-transport-security: max-age=15552000; includeSubDomains 
+ vary: Accept-Encoding 
+ x-content-type-options: nosniff 
+ x-dns-prefetch-control: off 
+ x-download-options: noopen 
+ x-envoy-upstream-service-time: 3 
+ x-frame-options: SAMEORIGIN 
+ x-permitted-cross-domain-policies: none 
+ x-xss-protection: 0 
+Responses
+Code	Description	Links
+200	
+Successful operation
+
+No links
+400	
+Invalid input
+
+No links
+
+-------------------------------------------------------------------------------------------
+
+2. Ice
+
+
+GET
+/ice
+Get ice information
+
+
+Parameters
+Cancel
+Name	Description
+lat *
+number
+(query)
+Latitude of the location
+
+34.921206
+lon *
+number
+(query)
+Longitude of the location
+
+-118.418998
+standardsVersion *
+string
+(query)
+Standards version
+
+
+7-10
+riskLevel
+number
+(query)
+Risk level
+
+
+--
+Execute
+Clear
+Responses
+Curl
+
+curl -X 'GET' \
+  'https://api-hazard.asce.org/v1/ice?lat=34.921206&lon=-118.418998&standardsVersion=7-10' \
+  -H 'accept: */*'
+Request URL
+https://api-hazard.asce.org/v1/ice?lat=34.921206&lon=-118.418998&standardsVersion=7-10
+Server response
+Code	Details
+500
+Undocumented
+Error: Internal Server Error
+
+Response body
+Download
+{
+  "code": 500,
+  "message": "Token required"
+}
+Response headers
+ access-control-allow-origin: * 
+ content-length: 39 
+ content-security-policy: default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests 
+ content-type: application/json; charset=utf-8 
+ cross-origin-opener-policy: same-origin 
+ cross-origin-resource-policy: same-origin 
+ date: Thu,21 Aug 2025 22:10:07 GMT 
+ etag: W/"27-mfKgJc2yDxTkGKgOVwnI4IMJ9G8" 
+ origin-agent-cluster: ?1 
+ ratelimit-limit: 3000 
+ ratelimit-policy: 3000;w=60 
+ ratelimit-remaining: 2998 
+ ratelimit-reset: 39 
+ referrer-policy: no-referrer 
+ server: envoy 
+ strict-transport-security: max-age=15552000; includeSubDomains 
+ vary: Accept-Encoding 
+ x-content-type-options: nosniff 
+ x-dns-prefetch-control: off 
+ x-download-options: noopen 
+ x-envoy-upstream-service-time: 5 
+ x-frame-options: SAMEORIGIN 
+ x-permitted-cross-domain-policies: none 
+ x-xss-protection: 0 
+Responses
+Code	Description	Links
+200	
+Successful operation
+
+No links
+400	
+Invalid input
+
+No links
+
+-------------------------------------------------------------------------------------------
+
+3. Rain
+
+
+GET
+/rain
+Get rain information
+
+
+Parameters
+Cancel
+Name	Description
+lat *
+number
+(query)
+Latitude of the location
+
+34.921206
+lon *
+number
+(query)
+Longitude of the location
+
+-118.418998
+Execute
+Clear
+Responses
+Curl
+
+curl -X 'GET' \
+  'https://api-hazard.asce.org/v1/rain?lat=34.921206&lon=-118.418998' \
+  -H 'accept: */*'
+Request URL
+https://api-hazard.asce.org/v1/rain?lat=34.921206&lon=-118.418998
+Server response
+Code	Details
+500
+Undocumented
+Error: Internal Server Error
+
+Response body
+Download
+{
+  "code": 500,
+  "message": "Token required"
+}
+Response headers
+ access-control-allow-origin: * 
+ content-length: 39 
+ content-security-policy: default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests 
+ content-type: application/json; charset=utf-8 
+ cross-origin-opener-policy: same-origin 
+ cross-origin-resource-policy: same-origin 
+ date: Thu,21 Aug 2025 22:10:41 GMT 
+ etag: W/"27-mfKgJc2yDxTkGKgOVwnI4IMJ9G8" 
+ origin-agent-cluster: ?1 
+ ratelimit-limit: 3000 
+ ratelimit-policy: 3000;w=60 
+ ratelimit-remaining: 2994 
+ ratelimit-reset: 5 
+ referrer-policy: no-referrer 
+ server: envoy 
+ strict-transport-security: max-age=15552000; includeSubDomains 
+ vary: Accept-Encoding 
+ x-content-type-options: nosniff 
+ x-dns-prefetch-control: off 
+ x-download-options: noopen 
+ x-envoy-upstream-service-time: 4 
+ x-frame-options: SAMEORIGIN 
+ x-permitted-cross-domain-policies: none 
+ x-xss-protection: 0 
+Responses
+Code	Description	Links
+200	
+Successful operation
+
+No links
+400	
+Invalid input
+
+No links
+
+-------------------------------------------------------------------------------------------
+
+4. Seismic
+
+
+GET
+/seismic
+Get seismic information
+
+
+Parameters
+Cancel
+Name	Description
+lat *
+number
+(query)
+Latitude of the location
+
+34.921206
+lon *
+number
+(query)
+Longitude of the location
+
+-118.418998
+standardsVersion *
+string
+(query)
+Standards version
+
+
+7-10
+riskLevel
+number
+(query)
+Risk level
+
+
+--
+siteClass
+string
+(query)
+Site class
+
+
+--
+Execute
+Clear
+Responses
+Curl
+
+curl -X 'GET' \
+  'https://api-hazard.asce.org/v1/seismic?lat=34.921206&lon=-118.418998&standardsVersion=7-10' \
+  -H 'accept: */*'
+Request URL
+https://api-hazard.asce.org/v1/seismic?lat=34.921206&lon=-118.418998&standardsVersion=7-10
+Server response
+Code	Details
+500
+Undocumented
+Error: Internal Server Error
+
+Response body
+Download
+{
+  "code": 500,
+  "message": "Token required"
+}
+Response headers
+ access-control-allow-origin: * 
+ content-length: 39 
+ content-security-policy: default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests 
+ content-type: application/json; charset=utf-8 
+ cross-origin-opener-policy: same-origin 
+ cross-origin-resource-policy: same-origin 
+ date: Thu,21 Aug 2025 22:11:04 GMT 
+ etag: W/"27-mfKgJc2yDxTkGKgOVwnI4IMJ9G8" 
+ origin-agent-cluster: ?1 
+ ratelimit-limit: 3000 
+ ratelimit-policy: 3000;w=60 
+ ratelimit-remaining: 2996 
+ ratelimit-reset: 49 
+ referrer-policy: no-referrer 
+ server: envoy 
+ strict-transport-security: max-age=15552000; includeSubDomains 
+ vary: Accept-Encoding 
+ x-content-type-options: nosniff 
+ x-dns-prefetch-control: off 
+ x-download-options: noopen 
+ x-envoy-upstream-service-time: 3 
+ x-frame-options: SAMEORIGIN 
+ x-permitted-cross-domain-policies: none 
+ x-xss-protection: 0 
+Responses
+Code	Description	Links
+200	
+Successful operation
+
+No links
+400	
+Invalid input
+
+No links
+
+-------------------------------------------------------------------------------------------
+
+5. Snow
+
+
+GET
+/snow
+Get snow information
+
+
+Parameters
+Cancel
+Name	Description
+lat *
+number
+(query)
+Latitude of the location
+
+34.921206
+lon *
+number
+(query)
+Longitude of the location
+
+-118.418998
+standardsVersion *
+string
+(query)
+Standards version
+
+
+7-10
+riskLevel *
+number
+(query)
+Risk level
+
+
+1
+Execute
+Clear
+Responses
+Curl
+
+curl -X 'GET' \
+  'https://api-hazard.asce.org/v1/snow?lat=34.921206&lon=-118.418998&standardsVersion=7-10&riskLevel=1' \
+  -H 'accept: */*'
+Request URL
+https://api-hazard.asce.org/v1/snow?lat=34.921206&lon=-118.418998&standardsVersion=7-10&riskLevel=1
+Server response
+Code	Details
+500
+Undocumented
+Error: Internal Server Error
+
+Response body
+Download
+{
+  "code": 500,
+  "message": "Token required"
+}
+Response headers
+ access-control-allow-origin: * 
+ content-length: 39 
+ content-security-policy: default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests 
+ content-type: application/json; charset=utf-8 
+ cross-origin-opener-policy: same-origin 
+ cross-origin-resource-policy: same-origin 
+ date: Thu,21 Aug 2025 22:12:01 GMT 
+ etag: W/"27-mfKgJc2yDxTkGKgOVwnI4IMJ9G8" 
+ origin-agent-cluster: ?1 
+ ratelimit-limit: 3000 
+ ratelimit-policy: 3000;w=60 
+ ratelimit-remaining: 2998 
+ ratelimit-reset: 55 
+ referrer-policy: no-referrer 
+ server: envoy 
+ strict-transport-security: max-age=15552000; includeSubDomains 
+ vary: Accept-Encoding 
+ x-content-type-options: nosniff 
+ x-dns-prefetch-control: off 
+ x-download-options: noopen 
+ x-envoy-upstream-service-time: 4 
+ x-frame-options: SAMEORIGIN 
+ x-permitted-cross-domain-policies: none 
+ x-xss-protection: 0 
+Responses
+Code	Description	Links
+200	
+Successful operation
+
+No links
+400	
+Invalid input
+
+No links
+
+-------------------------------------------------------------------------------------------
+
+6. Tornado
+
+
+GET
+/tornado
+Get tornado information
+
+
+Parameters
+Cancel
+Name	Description
+lat *
+number
+(query)
+Latitude of the location
+
+34.921206
+lon *
+number
+(query)
+Longitude of the location
+
+-118.418998
+standardsVersion *
+string
+(query)
+Standards version
+
+
+7-22
+riskLevel *
+number
+(query)
+Risk level
+
+
+1
+Execute
+Clear
+Responses
+Curl
+
+curl -X 'GET' \
+  'https://api-hazard.asce.org/v1/tornado?lat=34.921206&lon=-118.418998&standardsVersion=7-22&riskLevel=1' \
+  -H 'accept: */*'
+Request URL
+https://api-hazard.asce.org/v1/tornado?lat=34.921206&lon=-118.418998&standardsVersion=7-22&riskLevel=1
+Server response
+Code	Details
+500
+Undocumented
+Error: Internal Server Error
+
+Response body
+Download
+{
+  "code": 500,
+  "message": "Token required"
+}
+Response headers
+ access-control-allow-origin: * 
+ content-length: 39 
+ content-security-policy: default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests 
+ content-type: application/json; charset=utf-8 
+ cross-origin-opener-policy: same-origin 
+ cross-origin-resource-policy: same-origin 
+ date: Thu,21 Aug 2025 22:12:28 GMT 
+ etag: W/"27-mfKgJc2yDxTkGKgOVwnI4IMJ9G8" 
+ origin-agent-cluster: ?1 
+ ratelimit-limit: 3000 
+ ratelimit-policy: 3000;w=60 
+ ratelimit-remaining: 2996 
+ ratelimit-reset: 28 
+ referrer-policy: no-referrer 
+ server: envoy 
+ strict-transport-security: max-age=15552000; includeSubDomains 
+ vary: Accept-Encoding 
+ x-content-type-options: nosniff 
+ x-dns-prefetch-control: off 
+ x-download-options: noopen 
+ x-envoy-upstream-service-time: 4 
+ x-frame-options: SAMEORIGIN 
+ x-permitted-cross-domain-policies: none 
+ x-xss-protection: 0 
+Responses
+Code	Description	Links
+200	
+Successful operation
+
+No links
+400	
+Invalid input
+
+No links
+
+-------------------------------------------------------------------------------------------
+
+7. Tsunami
+
+
+GET
+/tsunami
+Get tsunami information
+
+
+Parameters
+Cancel
+Name	Description
+lat *
+number
+(query)
+Latitude of the location
+
+34.921206
+lon *
+number
+(query)
+Longitude of the location
+
+-118.418998
+standardsVersion *
+string
+(query)
+Standards version
+
+
+7-10
+Execute
+Clear
+Responses
+Curl
+
+curl -X 'GET' \
+  'https://api-hazard.asce.org/v1/tsunami?lat=34.921206&lon=-118.418998&standardsVersion=7-10' \
+  -H 'accept: */*'
+Request URL
+https://api-hazard.asce.org/v1/tsunami?lat=34.921206&lon=-118.418998&standardsVersion=7-10
+Server response
+Code	Details
+500
+Undocumented
+Error: Internal Server Error
+
+Response body
+Download
+{
+  "code": 500,
+  "message": "Token required"
+}
+Response headers
+ access-control-allow-origin: * 
+ content-length: 39 
+ content-security-policy: default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests 
+ content-type: application/json; charset=utf-8 
+ cross-origin-opener-policy: same-origin 
+ cross-origin-resource-policy: same-origin 
+ date: Thu,21 Aug 2025 22:13:03 GMT 
+ etag: W/"27-mfKgJc2yDxTkGKgOVwnI4IMJ9G8" 
+ origin-agent-cluster: ?1 
+ ratelimit-limit: 3000 
+ ratelimit-policy: 3000;w=60 
+ ratelimit-remaining: 2997 
+ ratelimit-reset: 55 
+ referrer-policy: no-referrer 
+ server: envoy 
+ strict-transport-security: max-age=15552000; includeSubDomains 
+ vary: Accept-Encoding 
+ x-content-type-options: nosniff 
+ x-dns-prefetch-control: off 
+ x-download-options: noopen 
+ x-envoy-upstream-service-time: 4 
+ x-frame-options: SAMEORIGIN 
+ x-permitted-cross-domain-policies: none 
+ x-xss-protection: 0 
+Responses
+Code	Description	Links
+200	
+Successful operation
+
+No links
+400	
+Invalid input
+
+No links
+
+-------------------------------------------------------------------------------------------
+
+8. Wind
+
+
+GET
+/wind
+Get wind information
+
+
+Parameters
+Cancel
+Name	Description
+lat *
+number
+(query)
+Latitude of the location
+
+34.921206
+lon *
+number
+(query)
+Longitude of the location
+
+-118.418998
+standardsVersion *
+string
+(query)
+Standards version
+
+
+7-10
+riskLevel *
+number
+(query)
+Risk level
+
+
+1
+Execute
+Clear
+Responses
+Curl
+
+curl -X 'GET' \
+  'https://api-hazard.asce.org/v1/wind?lat=34.921206&lon=-118.418998&standardsVersion=7-10&riskLevel=1' \
+  -H 'accept: */*'
+Request URL
+https://api-hazard.asce.org/v1/wind?lat=34.921206&lon=-118.418998&standardsVersion=7-10&riskLevel=1
+Server response
+Code	Details
+500
+Undocumented
+Error: Internal Server Error
+
+Response body
+Download
+{
+  "code": 500,
+  "message": "Token required"
+}
+Response headers
+ access-control-allow-origin: * 
+ content-length: 39 
+ content-security-policy: default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests 
+ content-type: application/json; charset=utf-8 
+ cross-origin-opener-policy: same-origin 
+ cross-origin-resource-policy: same-origin 
+ date: Thu,21 Aug 2025 22:13:30 GMT 
+ etag: W/"27-mfKgJc2yDxTkGKgOVwnI4IMJ9G8" 
+ origin-agent-cluster: ?1 
+ ratelimit-limit: 3000 
+ ratelimit-policy: 3000;w=60 
+ ratelimit-remaining: 2991 
+ ratelimit-reset: 29 
+ referrer-policy: no-referrer 
+ server: envoy 
+ strict-transport-security: max-age=15552000; includeSubDomains 
+ vary: Accept-Encoding 
+ x-content-type-options: nosniff 
+ x-dns-prefetch-control: off 
+ x-download-options: noopen 
+ x-envoy-upstream-service-time: 3 
+ x-frame-options: SAMEORIGIN 
+ x-permitted-cross-domain-policies: none 
+ x-xss-protection: 0 
+Responses
+Code	Description	Links
+200	
+Successful operation
+
+No links
+400	
+Invalid input
+
+No links
+
+

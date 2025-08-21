@@ -42,6 +42,7 @@ Sample files: `AWM-Hazard-Tool-Template.csv`, `Solar_Farms_CSV.csv`, and `Error_
 - Toggle in `main.js`: set `useMockData = false` to call the API.
 - Endpoint: `https://vt8pmhgbpp.us-east-1.awsapprunner.com/api/hazards`
 - Auth: Bearer token in request headers.
+- ASCE-style query params are used: `lat`, `lon`, `standardsVersion`, `riskLevel`, `siteClass`.
 
 Important: The included API key in `main.js` is visible to anyone loading the page. For production, proxy API calls through a backend you control and store keys securely.
 
